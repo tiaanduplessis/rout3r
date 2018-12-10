@@ -1,6 +1,6 @@
 {
   "name": "rout3r",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Just route the things",
   "main": "dist/rout3r.js",
   "umd:main": "dist/rout3r.umd.js",
