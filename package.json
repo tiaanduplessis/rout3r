@@ -11,8 +11,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --fix src",
-    "build": "microbundle -o dist/ --sourcemap false --compress false",
-    "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
+    "build": "microbundle -o dist/ --sourcemap false --compress false --jsx React.createElement",
+    "dev": "microbundle watch -o dist/ --sourcemap false --compress false --jsx React.createElement"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
