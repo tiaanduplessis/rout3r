@@ -1,15 +1,18 @@
-import React, { createContext } from "react"; // eslint-disable-line
+// eslint-disable-next-line import/no-unresolved
+import React, { createContext } from 'react'
 import { createBrowserHistory } from 'history'
 import wayfarer from 'wayfarer'
+
+import { getQueryStringParams } from './utils'
 
 const Context = createContext()
 const { Provider, Consumer } = Context
 
-const withConsumer = (elem, params) => (
+const withConsumer = (element, params) => (
   <Consumer>
     {({
       state, push, replace, goBack, goForward,
-    }) => React.cloneElement(elem, {
+    }) => React.cloneElement(element, {
       path: state.url,
       searchParams: getQueryStringParams(state.search),
       push,
@@ -23,12 +26,12 @@ const withConsumer = (elem, params) => (
 )
 
 export class Router extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor(properties) {
+    super(properties)
 
-    this.history = props.history || createBrowserHistory()
+    this.history = properties.history || createBrowserHistory()
     this.unlisten = null
-    this.router = wayfarer(props.defaultPath || '/')
+    this.router = wayfarer(properties.defaultPath || '/')
 
     this.actions = {
       push: this.history.push,
@@ -37,10 +40,10 @@ export class Router extends React.Component {
       replace: this.history.replace,
     }
 
-    React.Children.map(props.children, child => this.addRoute(child))
+    React.Children.map(properties.children, child => this.addRoute(child))
 
     this.state = {
-      search: window.location.search, // eslint-disable-line
+      search: window.location.search,
       url: window.location.pathname,
     }
   }
@@ -59,9 +62,9 @@ export class Router extends React.Component {
     this.unlisten()
   }
 
-  addRoute(elem) {
-    const { path } = elem.props
-    const render = params => withConsumer(elem, params)
+  addRoute(element) {
+    const { path } = element.props
+    const render = params => withConsumer(element, params)
     this.router.on(path, render)
   }
 
@@ -77,17 +80,17 @@ export class Router extends React.Component {
 }
 
 export function Link({
-  path, href, children, ...props
+  path, href, children, ...properties
 }) {
   const to = href || path
   return (
     <Consumer>
       {({ push }) => (
         <a
-          {...props}
+          {...properties}
           href={to}
-          onClick={(e) => {
-            e.preventDefault()
+          onClick={(event) => {
+            event.preventDefault()
             push(to)
           }}
         >
@@ -96,19 +99,4 @@ export function Link({
       )}
     </Consumer>
   )
-}
-
-// https://stackoverflow.com/a/3855394/7027045
-function getQueryStringParams(query = '') {
-  return query
-    ? (/^[?#]/.test(query) ? query.slice(1) : query)
-      .split('&')
-      .reduce((params, param) => {
-        const [key, value] = param.split('=')
-        params[key] = value
-          ? decodeURIComponent(value.replace(/\+/g, ' '))
-          : ''
-        return params
-      }, {})
-    : {}
 }

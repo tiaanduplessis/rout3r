@@ -1,9 +1,9 @@
 {
   "name": "rout3r",
   "version": "1.0.1",
-  "description": "Just route the things",
+  "description": "Trie based React Router in under 1 KB",
   "main": "dist/rout3r.js",
-  "umd:main": "dist/rout3r.umd.js",
+  "unpkg": "dist/rout3r.umd.js",
   "module": "dist/rout3r.m.js",
   "source": "src/index.js",
   "repository": "https://github.com/tiaanduplessis/rout3r",
@@ -18,21 +18,22 @@
     "babel-eslint": "10.0.2",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
-    "eslint-config-nitpicky": "3.0.0",
+    "eslint-config-nitpicky": "3.4.1",
     "eslint-plugin-babel": "5.3.0",
-    "eslint-plugin-compat": "2.6.3",
-    "eslint-plugin-flowtype": "3.2.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jest": "22.1.2",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "7.11.1",
-    "microbundle": "0.8.3"
+    "eslint-plugin-compat": "3.2.0",
+    "eslint-plugin-flowtype": "3.11.1",
+    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-jest": "22.7.1",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.14.2",
+    "eslint-plugin-unicorn": "^9.1.1",
+    "microbundle": "0.11.0"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "16.x"
   },
   "dependencies": {
-    "history": "^4.7.2",
-    "wayfarer": "^6.6.4"
+    "history": "^4.9.0",
+    "wayfarer": "^7.0.0"
   }
 }

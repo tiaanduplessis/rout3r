@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="header.png" alt="rout3r logo">
+  <img src="header.png" alt="rout3r">
 </div>
 
 [![package version](https://img.shields.io/npm/v/rout3r.svg?style=flat-square)](https://npmjs.org/package/rout3r)
@@ -9,7 +9,7 @@
 [![package license](https://img.shields.io/npm/l/rout3r.svg?style=flat-square)](https://npmjs.org/package/rout3r)
 [![make a pull request](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-> Just route the things
+> Trie based React Router in under 1 KB
 
 ## Table of Contents
 
@@ -22,13 +22,13 @@
 
 ## About
 
-- Uses [Context API]() and [wayfarer](https://www.npmjs.com/package/wayfarer) for fast routing.
-- Tiny footprint (Less than 1 kB gzipped)
+- Uses [Context API](https://reactjs.org/docs/context.html) and [wayfarer](https://www.npmjs.com/package/wayfarer) for fast routing.
+- Tiny footprint (Less than 1 KB gzipped)
 - Configurable via [history](https://www.npmjs.com/package/history)
 
 ## Install
 
-This project uses [node](https://nodejs.org) and [npm](https://www.npmjs.com). 
+This project uses [node](https://nodejs.org) and [npm](https://www.npmjs.com).
 
 ```sh
 $ npm install rout3r
@@ -85,4 +85,3 @@ ReactDOM.render(<App />, rootElement);
 ## License
 
 MIT
-    
