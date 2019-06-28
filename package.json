@@ -1,6 +1,6 @@
 {
   "name": "rout3r",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Trie based React Router in under 1 KB",
   "main": "dist/rout3r.js",
   "unpkg": "dist/rout3r.umd.js",
