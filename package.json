@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "history": "^4.9.0",
-    "wayfarer": "^7.0.0"
+    "wayfarer": "^7.0.1"
   }
 }
