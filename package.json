@@ -33,7 +33,7 @@
     "react": "16.x"
   },
   "dependencies": {
-    "history": "^4.9.0",
+    "history": "^4.10.1",
     "wayfarer": "^7.0.0"
   }
 }
